@@ -94,6 +94,15 @@ form{
   margin: 0 auto;
 }
 
+.doctor-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 16px auto;
+  display: block;
+}
+
 table {
  border-collapse: collapse;
     border-spacing: 0;
