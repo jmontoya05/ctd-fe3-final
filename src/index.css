@@ -35,6 +35,11 @@ nav div {
   align-items: center;
 }
 
+.logo {
+  width: 230px;
+  margin: 0;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -75,6 +80,7 @@ footer > img{
   width: 200px;
   margin: 0;
 }
+
 footer > p{
   margin: 0;
   padding-top: 0.7rem;

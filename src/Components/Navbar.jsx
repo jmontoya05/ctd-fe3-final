@@ -7,8 +7,11 @@ const Navbar = () => {
 
   return (
     <nav>
+      <Link to="/">
+        <img src="/images/DH.png" alt="Logo" className="logo" />
+      </Link>
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/">Inicio</Link>
         <Link to="/favs">Favoritos</Link>
         <Link to="/contact">Contacto</Link>
       </div>

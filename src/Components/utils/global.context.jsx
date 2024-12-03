@@ -20,7 +20,21 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: "SET_THEME", payload: newTheme });
   };
 
-  const value = useMemo(() => ({ state, dispatch, toggleTheme }), [state, dispatch]);
+  const toggleFavorite = (favorite) => {
+    const isFavorite = state.favorites.find((fav) => fav.id === favorite.id);
+    if (isFavorite) {
+      dispatch({ type: "REMOVE_FAVORITE", payload: favorite });
+    } else {
+      dispatch({ type: "ADD_FAVORITE", payload: favorite });
+    }
+  };
+
+  const value = useMemo(() => ({
+    state,
+    dispatch,
+    toggleTheme,
+    toggleFavorite,
+  }), [state, dispatch]);
 
   return (
     <ContextGlobal.Provider value={value}>

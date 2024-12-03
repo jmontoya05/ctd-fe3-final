@@ -1,32 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Card from "../Components/Card";
+import { ContextGlobal } from "../Components/utils/global.context";
 
 const Favs = () => {
-  const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    const storedFavs = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(storedFavs);
-  }, []);
-
-  const handleRemoveFavorite = (id) => {
-    const updatedFavs = favorites.filter((fav) => fav.id !== id);
-    setFavorites(updatedFavs);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavs));
-  };
+  const { state } = useContext(ContextGlobal);
 
   return (
     <>
       <h1>Odontólogos Favoritos</h1>
       <div className="card-grid">
-        {favorites.length > 0 ? (
-          favorites.map((fav) => (
+        {state.favorites.length > 0 ? (
+          state.favorites.map((fav) => (
             <Card
               key={fav.id}
               id={fav.id}
               name={fav.name}
               username={fav.username}
-              onRemoveFavorite={handleRemoveFavorite}
             />
           ))
         ) : (
