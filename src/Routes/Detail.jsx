@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { ContextGlobal } from "../Components/utils/global.context";
 
 const Detail = () => {
   const { id } = useParams();
-  const [dentist, setDentist] = useState(null);
+  const { state } = useContext(ContextGlobal);
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then((response) => response.json())
-      .then((data) => setDentist(data))
-      .catch((error) => console.error("Error buscando los detalles del dentista:", error));
-  }, [id]);
+  const dentist = state.data ? state.data.find((dentist) => dentist.id === parseInt(id)) : null;
 
   return (
     <>

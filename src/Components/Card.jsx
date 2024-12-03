@@ -25,7 +25,7 @@ const Card = ({ id, name, username, onRemoveFavorite }) => {
       localStorage.setItem("favorites", JSON.stringify(updatedFavs));
       setIsFavorite(false);
       alert(`${name} fue eliminado de favoritos!`);
-      
+
       if (onRemoveFavorite) {
         onRemoveFavorite(id);
       }

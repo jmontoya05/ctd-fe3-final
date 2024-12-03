@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Card from "../Components/Card";
+import { ContextGlobal } from "../Components/utils/global.context";
 
 const Home = () => {
-  const [dentists, setDentists] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((data) => setDentists(data))
-      .catch((error) => console.error("Error al buscar dentistas:", error));
-  }, []);
+  const { state } = useContext(ContextGlobal);
 
   return (
     <main className="home">
-      <h1>Home</h1>
+      <h1>Inicio</h1>
       <div className="card-grid">
-        {dentists.map((dentist) => (
+        {state.data.map((dentist) => (
           <Card
             key={dentist.id}
             id={dentist.id}
@@ -29,3 +23,4 @@ const Home = () => {
 };
 
 export default Home;
+
