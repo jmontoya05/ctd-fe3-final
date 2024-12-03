@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
@@ -6,8 +6,15 @@ import Contact from "./Routes/Contact";
 import Home from "./Routes/Home";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs";
+import { ContextGlobal } from "./Components/utils/global.context";
 
 function App() {
+  const { state } = useContext(ContextGlobal);
+
+  useEffect(() => {
+    document.body.className = state.theme;
+  }, [state.theme]);
+  
   return (
       <div className="App">
         <Navbar />

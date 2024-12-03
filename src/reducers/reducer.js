@@ -1,4 +1,3 @@
-
 export const initialState = {
     theme: "light",
     data: [],
@@ -20,4 +19,5 @@ export const initialState = {
         return state;
     }
   };
+  
   

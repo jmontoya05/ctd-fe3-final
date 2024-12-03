@@ -15,7 +15,12 @@ export const ContextProvider = ({ children }) => {
       .catch((error) => console.error("Error al buscar dentistas:", error));
   }, []);
 
-  const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const toggleTheme = () => {
+    const newTheme = state.theme === "light" ? "dark" : "light";
+    dispatch({ type: "SET_THEME", payload: newTheme });
+  };
+
+  const value = useMemo(() => ({ state, dispatch, toggleTheme }), [state, dispatch]);
 
   return (
     <ContextGlobal.Provider value={value}>
@@ -23,6 +28,3 @@ export const ContextProvider = ({ children }) => {
     </ContextGlobal.Provider>
   );
 };
-
-
-

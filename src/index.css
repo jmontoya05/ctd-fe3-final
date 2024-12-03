@@ -23,22 +23,41 @@ h1{
   text-align: center;
 }
 
-nav{
+nav {
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 1rem;
+  width: 95%;
 }
 
-a{
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+a {
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
-a:hover{
+
+a:hover {
   color: rgb(136, 136, 136);
-} 
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
 
 footer {
   display: flex;
@@ -104,11 +123,11 @@ form{
 }
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 
 }
 
