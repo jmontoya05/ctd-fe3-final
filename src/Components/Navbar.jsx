@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom"; // Importa Link para navegación
+import { Link } from "react-router-dom";
 import { ContextGlobal } from "../Components/utils/global.context";
 
 const Navbar = () => {
