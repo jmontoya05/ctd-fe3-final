@@ -32,7 +32,7 @@ const Form = () => {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Nombre completo:</label>
+          <label htmlFor="name" className="label-form">Nombre completo:</label>
           <input
             type="text"
             id="name"
@@ -42,7 +42,7 @@ const Form = () => {
           />
         </div>
         <div>
-          <label htmlFor="email">Correo electrónico:</label>
+          <label htmlFor="email" className="label-form">Correo electrónico:</label>
           <input
             type="email"
             id="email"

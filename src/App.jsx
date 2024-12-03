@@ -9,25 +9,32 @@ import Favs from "./Routes/Favs";
 import { ContextGlobal } from "./Components/utils/global.context";
 
 function App() {
-  const { state } = useContext(ContextGlobal);
+  const { state, dispatch } = useContext(ContextGlobal);
 
   useEffect(() => {
     document.body.className = state.theme;
+    localStorage.setItem("theme", state.theme);
   }, [state.theme]);
-  
+
+  const toggleTheme = () => {
+    const newTheme = state.theme === "dark" ? "light" : "dark";
+    dispatch({ type: "SET_THEME", payload: newTheme });
+  };
+
   return (
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/dentist/:id" element={<Detail />} />
-          <Route path="/favs" element={<Favs />} />
-        </Routes>
-        <Footer />
-      </div>
+    <div className="App">
+      <Navbar toggleTheme={toggleTheme} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dentist/:id" element={<Detail />} />
+        <Route path="/favs" element={<Favs />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 
 export default App;
+
 

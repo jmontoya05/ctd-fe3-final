@@ -3,11 +3,11 @@ import Form from '../Components/Form';
 
 const Contact = () => {
   return (
-    <div className="contact-container">
-      <h2>¿Quieres saber más?</h2>
+    <>
+      <h1>¿Quieres saber más?</h1>
       <p>Envianos tus preguntas y te contactaremos</p>
       <Form />
-    </div>
+    </>
   );
 };
 

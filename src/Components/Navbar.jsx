@@ -8,7 +8,9 @@ const Navbar = () => {
   return (
     <nav>
       <Link to="/">
+      <div className="navbar-logo-container">
         <img src="/images/DH.png" alt="Logo" className="logo" />
+      </div>
       </Link>
       <div>
         <Link to="/">Inicio</Link>
@@ -16,7 +18,7 @@ const Navbar = () => {
         <Link to="/contact">Contacto</Link>
       </div>
       <button onClick={toggleTheme}>
-        Cambiar a tema {state.theme === "light" ? "oscuro" : "claro"}
+        Cambiar tema {state.theme === "light" ? "🌑" : "🌕"}
       </button>
     </nav>
   );
